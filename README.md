@@ -10,7 +10,7 @@ At the time, I created a tool that would iteratively go through around 4000 diff
 
 This model failed after just a couple of days :(
 
-[[Image=https://i.imgflip.com/2ezldo.jpg|alt=meme]]
+[:(](https://i.imgflip.com/2ezldo.jpg)
 
 Fast forward several years, I came back to the same problem. I am fully aware of the chance of failure (as evidenced from my previous trial), but just to get the nagging off my shoulder I figure I try this again. Yay for stupidity! 
 
