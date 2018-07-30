@@ -2,17 +2,15 @@
 A stock selection and prediction tool for the next day using a variety of stacked LSTM neural networks
 
 # Description: 
-
 So. 
 
 A while ago, in my own endevour to be a millionaire, I tried to create a tool to automatically predict and choose which stock would be the most successful for the next day.
 
 At the time, I created a tool that would iteratively go through around 4000 different stock symbols, download historical pricing information, and then using a LSTM network (very simple, no stacking, single layer) tried to estimate what the next days value would be for that stock. And then after accumulating each stock prediction, gave a single result that would be the largest "winner" for that day.
 
-... this failed after just a couple of days ... :(
+This model failed after just a couple of days :(
 
-[[https://i.imgflip.com/2ezldo.jpg|alt=meme]]
-<div class="imagelink_wikilogo">[[meme|&nbsp;]]</div>
+[[Image=https://i.imgflip.com/2ezldo.jpg|alt=meme]]
 
 Fast forward several years, I came back to the same problem. I am fully aware of the chance of failure (as evidenced from my previous trial), but just to get the nagging off my shoulder I figure I try this again. Yay for stupidity! 
 
@@ -24,29 +22,17 @@ Well to put it simply its "(hidden) pairs trading".
 
 "if there exists stocks that will have a postive/negative impact on another stock somewhere, can we identify those traits of one stock and associate those traits to the largest swing stock (by percentage) for every single day for the last year?" ... across every single S&P500 stock
 
-......
-
-so in other words, there is no projection of the next days price (in the primary solution), but rather a 500 class classification with a window of 10 across 500 different classes
-
-
-....
-
+So in other words, there is no projection of the next days price (in the primary solution), but rather a 500 class classification with a window of 10 across 500 different classes
 
 This also has a terrible accuracy, about .3% (with around 150-200 epochs) but in this model, i dont care about finding the "winner", i just care if the stock is green or not .....
 
-
 over the last month so far ive had 15/18 matches (for being green)
-
 
 we'll see where this goes.
 
-
 runs best in linux
 
-
 ... YMMV :)
-
-
 
 # Installation:
 
@@ -73,7 +59,12 @@ Get an actual assessment running through the gauntlet of all model combinations
 ./run_test.sh
 ./process_output_log.sh output.log
 
-# Credits: Alot of smart people at keras/google/pandas/and whoever would like to take credit for something they did in the past
+# Credits: 
+Alot of smart people at keras, google, pandas, Robinhood, Jamonek, and whoever would like to take credit for something they did in the past
+
+oh my mother and God
+
+<queues music>
 
 # License: 
 
