@@ -1,15 +1,7 @@
-.imagelink_wikilogo a {
-  width:135px;
-  height:135px;
-  display:block;
-  text-decoration:none;
-  background-image: url("https://i.imgflip.com/2ezldo.jpg") 
-}
-
 # stock_picker
 A stock selection and prediction tool for the next day using a variety of stacked LSTM neural networks
 
-#Description: 
+# Description: 
 
 So. 
 
@@ -19,6 +11,7 @@ At the time, I created a tool that would iteratively go through around 4000 diff
 
 ... this failed after just a couple of days ... :(
 
+[[https://i.imgflip.com/2ezldo.jpg|alt=meme]]
 <div class="imagelink_wikilogo">[[meme|&nbsp;]]</div>
 
 Fast forward several years, I came back to the same problem. I am fully aware of the chance of failure (as evidenced from my previous trial), but just to get the nagging off my shoulder I figure I try this again. Yay for stupidity! 
@@ -55,18 +48,23 @@ runs best in linux
 
 
 
-#Installation:
+# Installation:
 
 install python2.7 (or 3.6) ... whatever im a readme, not your mother
 
 git clone https://github.com/quiteconfused/stock_picker
+
 pip install tensorflow-gpu keras pandas matplotlib sklearn numpy
+
 git clone https://github.com/Jamonek/Robinhood
+
 cd Robinhood
+
 pip install .
+
 cd ../stock_picker
 
-#Usage: 
+# Usage: 
 
 Just run the test once and test it out for yourself:
 python stacked_lstm.py -d 
@@ -75,7 +73,7 @@ Get an actual assessment running through the gauntlet of all model combinations
 ./run_test.sh
 ./process_output_log.sh output.log
 
-#Credits: Alot of smart people at keras/google/pandas/and whoever would like to take credit for something they did in the past
+# Credits: Alot of smart people at keras/google/pandas/and whoever would like to take credit for something they did in the past
 
-#License: 
+# License: 
 
