@@ -1,3 +1,11 @@
+.imagelink_wikilogo a {
+  width:135px;
+  height:135px;
+  display:block;
+  text-decoration:none;
+  background-image: url("https://i.imgflip.com/2ezldo.jpg") 
+}
+
 # stock_picker
 A stock selection and prediction tool for the next day using a variety of stacked LSTM neural networks
 
@@ -11,7 +19,7 @@ At the time, I created a tool that would iteratively go through around 4000 diff
 
 ... this failed after just a couple of days ... :(
 
-[[image=https://i.imgflip.com/2ezldo.jpg]]
+<div class="imagelink_wikilogo">[[meme|&nbsp;]]</div>
 
 Fast forward several years, I came back to the same problem. I am fully aware of the chance of failure (as evidenced from my previous trial), but just to get the nagging off my shoulder I figure I try this again. Yay for stupidity! 
 
