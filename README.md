@@ -26,13 +26,15 @@ So in other words, there is no projection of the next days price (in the primary
 
 This also has a terrible accuracy, about .3% (with around 150-200 epochs) but in this model, i dont care about finding the "winner", i just care if the stock is green or not .....
 
-over the last month so far ive had 15/18 matches (for being green)
-
 we'll see where this goes.
 
 runs best in linux
 
 ... YMMV :)
+
+# Disclaimer
+
+And just to make sure everyone is aware. The author in no way takes responsibility for whatever investment choices anyone who uses this software makes. Use at your own risk!!
 
 # Installation:
 
