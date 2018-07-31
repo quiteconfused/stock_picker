@@ -34,7 +34,7 @@ runs best in linux
 
 # Disclaimer
 
-And just to make sure everyone is aware. The author in no way takes responsibility for whatever investment choices anyone who uses this software makes. Use at your own risk!!
+And just to make sure everyone is aware. The author takes no responsibility for whatever investment choices are made in conjunction with predictions made with use of this software. Use at your own risk!!
 
 # Installation:
 
