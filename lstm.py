@@ -36,7 +36,7 @@ def do_main(argv):
         stock_dataset['Name']=stock
         stock_dataset.to_csv('./stocks/'+argv[1]+'_data.csv')
         
-        if(now_time>=past_five_pm and weekno<5):
+        if(False and now_time>=past_five_pm and weekno<5):
             #get the last value padding ohlcv
             current=web.get_last_iex(stock)[0][0]
 			

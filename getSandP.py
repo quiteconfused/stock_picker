@@ -13,6 +13,8 @@ import pandas_datareader.data as web
 
 import os
 
+IEX=False
+
 def download_stock(stock):
 	""" try to query the iex for a stock, if failed note with print """
 
@@ -26,26 +28,29 @@ def download_stock(stock):
 
 	try:
 		print(stock)
-		#stock_df = web.DataReader(stock,'iex', start_time, now_time)
-		stock_df = web.DataReader(stock,'robinhood', start_time, now_time)
-		#stock_df = web.DataReader(stock,'morningstar', start_time, now_time)
-		#stock_df['Name'] = stock
+		stock_df=''
+		if(IEX==True):
+			stock_df = web.DataReader(stock,'iex', start_time, now_time)
+			stock_df['Name'] = stock
+		else:
+			stock_df = web.DataReader(stock,'robinhood', start_time, now_time)
 		output_name = os.path.join('.','stocks',stock+'_data.csv')
 		stock_df.to_csv(output_name)
 
 		if(now_time>=past_five_pm and weekno<5):
 			#get the last value padding ohlcv
-			#current=web.get_last_iex(stock)[0][0]
-			current = float(web.get_quotes_robinhood(stock)[stock][7])
+			if(IEX==True):
+				current=web.get_last_iex(stock)[0][0]
+				temphigh=stock_df['close'][len(stock_df)-1]
+				templow=stock_df['close'][len(stock_df)-1]
+				previous_close=stock_df['close'][len(stock_df)-1]
+			else:
+				current = float(web.get_quotes_robinhood(stock)[stock][7])
+				temphigh=float(stock_df['close_price'][len(stock_df)-1])
+				templow=float(stock_df['close_price'][len(stock_df)-1])
+				previous_close=float(stock_df['close_price'][len(stock_df)-1])
 
-			
-			#temphigh=stock_df['close'][len(stock_df)-1]
-			temphigh=float(stock_df['close_price'][len(stock_df)-1])
-			#templow=stock_df['close'][len(stock_df)-1]
-			templow=float(stock_df['close_price'][len(stock_df)-1])
-			tempvol=int(stock_df['volume'][len(stock_df)-1])
-			#previous_close=stock_df['close'][len(stock_df)-1]
-			previous_close=float(stock_df['close_price'][len(stock_df)-1])
+			tempvol=int(stock_df['volume'][len(stock_df)-1])			
 			current_date=datetime.datetime.today().strftime('%Y-%m-%d')
 
 
@@ -54,10 +59,14 @@ def download_stock(stock):
 			if(templow>current):
 				templow=current
 
+
+
 			#df.append({ 'date':current_date, 'open':previous_close, 'high':temphigh, 'low':templow, 'close':current, 'volume':tempvol, 'Name':stock })
 			with open(os.path.join('.','stocks',stock+'_data.csv'), 'a') as f:
-				#f.write( '%s,%0.2f,%0.2f,%0.2f,%0.2f,%d,%s\n'%(current_date, previous_close, temphigh, templow, current, tempvol, stock))
-				f.write( '%s,%s,%0.6f,%0.6f,False,%0.6f,%0.6f,reg,%d\n'%(stock, current_date, current, temphigh, templow, previous_close, tempvol))
+				if(IEX==True):
+					f.write( '%s,%0.2f,%0.2f,%0.2f,%0.2f,%d,%s\n'%(current_date, previous_close, temphigh, templow, current, tempvol, stock))
+				else:
+					f.write( '%s,%s,%0.6f,%0.6f,False,%0.6f,%0.6f,reg,%d\n'%(stock, current_date, current, temphigh, templow, previous_close, tempvol))
 
 
 	except Exception as e:
