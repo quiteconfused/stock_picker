@@ -56,12 +56,11 @@ python stacked_lstm.py -d
 
 Get an actual assessment running through the gauntlet of all model combinations
 ```
-./run_test.sh
+./run_test.sh && ./process_output_log.sh output.log
 ```
 OR (when its past 6pm and the markets have closed ... projections are made to compensate for live values) 
 ```
-./run_test_post_6pm.sh
-./process_output_log.sh output.log
+./run_test_post_6pm.sh && ./process_output_log.sh output.log
 ```
 
 ## Credits: 
