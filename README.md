@@ -1,7 +1,7 @@
 # stock_picker
 A stock selection and prediction tool for the next day using a variety of stacked LSTM neural networks
 
-# Description: 
+## Description: 
 So. 
 
 A while ago, in my own endevour to be a millionaire, I tried to create a tool to automatically predict and choose which stock would be the most successful for the next day.
@@ -10,7 +10,7 @@ At the time, I created a tool that would iteratively go through around 4000 diff
 
 This model failed after just a couple of days :(
 
-[[https://github.com/quiteconfused/stock_picker/blob/master/images/2ezldo.jpg]]
+![alt text](https://github.com/quiteconfused/stock_picker/blob/master/images/2ezldo.jpg "Obligatory Meme")
 
 Fast forward several years, I came back to the same problem. I am fully aware of the chance of failure (as evidenced from my previous trial), but just to get the nagging off my shoulder I figure I try this again. Yay for stupidity! 
 
@@ -32,13 +32,13 @@ runs best in linux
 
 ... YMMV :)
 
-# Disclaimer
+## Disclaimer:
 
 And just to make sure everyone is aware. The author takes no responsibility for whatever investment choices are made in conjunction with predictions made with use of this software. Use at your own risk!!
 
-# Installation:
+## Installation:
 
-install python2.7 (or 3.6) ... whatever im a readme, not your mother
+install python2.7 (or 3.6) ... whatever I'm a readme, not your mother
 
 git clone https://github.com/quiteconfused/stock_picker
 
@@ -52,7 +52,7 @@ pip install .
 
 cd ../stock_picker
 
-# Usage: 
+## Usage: 
 
 Just run the test once and test it out for yourself:
 python stacked_lstm.py -d 
@@ -61,12 +61,12 @@ Get an actual assessment running through the gauntlet of all model combinations
 ./run_test.sh
 ./process_output_log.sh output.log
 
-# Credits: 
+## Credits: 
 Alot of smart people at keras, google, pandas, Robinhood, Jamonek, and whoever would like to take credit for something they did in the past
 
 oh my mother and God
 
 <queues music>
 
-# License: 
+## License: 
 
