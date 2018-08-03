@@ -40,17 +40,17 @@ And just to make sure everyone is aware. The author takes no responsibility for 
 
 install python2.7 (or 3.6) ... whatever I'm a readme, not your mother
 
-git clone https://github.com/quiteconfused/stock_picker
+<b>git clone https://github.com/quiteconfused/stock_picker</b>
 
-pip install tensorflow-gpu keras pandas matplotlib sklearn numpy
+<b>pip install tensorflow-gpu keras pandas matplotlib sklearn numpy</b>
 
-git clone https://github.com/Jamonek/Robinhood
+<b>git clone https://github.com/Jamonek/Robinhood</b>
 
-cd Robinhood
+<b>cd Robinhood</b>
 
-pip install .
+<b>pip install .</b>
 
-cd ../stock_picker
+<b>cd ../stock_picker</b>
 
 ## Usage: 
 
@@ -58,8 +58,9 @@ Just run the test once and test it out for yourself:
 python stacked_lstm.py -d 
 
 Get an actual assessment running through the gauntlet of all model combinations
-./run_test.sh
-./process_output_log.sh output.log
+
+<b>./run_test.sh</b> OR (even past 6pm and markets have closed ) <b>./run_test_post_6pm.sh</b>
+<b>./process_output_log.sh output.log</b>
 
 ## Credits: 
 Alot of smart people at keras, google, pandas, Robinhood, Jamonek, and whoever would like to take credit for something they did in the past
