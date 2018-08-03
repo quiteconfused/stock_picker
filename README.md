@@ -20,17 +20,19 @@ So since price project is NOT the purpose of this project, what is the purpose?
 
 Well to put it simply its "(hidden) pairs trading".
 
-"if there exists stocks that will have a postive/negative impact on another stock somewhere, can we identify those traits of one stock and associate those traits to the largest swing stock (by percentage) for every single day for the last year?" ... across every single S&P500 stock
+"If there exists a stock that will have a postive/negative impact on another stock somewhere, can we identify those traits of that one stock and associate those traits to the largest swing stock (by percentage) for every single day for the last year?" ... across every single S&P500 stock.
 
-So in other words, there is no projection of the next days price (in the primary solution), but rather a 500 class classification with a window of 10 across 500 different classes
+So in other words, there is no projection of the next days price (in the primary component), but rather a 500 class classification with a window of 10 across 500 different classes.
 
-This also has a terrible accuracy, about .3% (with around 150-200 epochs) but in this model, i dont care about finding the "winner", i just care if the stock is green or not .....
+This also has a terrible accuracy, ~ 3% ( @ around 150-200 epochs). But in this model, I dont care about finding the "winner" (even though that is what I am training for), I just care if the stock is green or not. 
 
-we'll see where this goes.
+As my previous manager told me "its ok to try for the fences, just as long as you get on base."
 
-runs best in linux
+We'll see where this goes.
 
-... YMMV :)
+The core component should run in either Linux or Windows but in my own experience this runs best in Linux.
+
+YMMV :)
 
 ## Disclaimer:
 
