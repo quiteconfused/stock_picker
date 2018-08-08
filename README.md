@@ -68,10 +68,13 @@ cd ../stock_picker
 ```
 ## Usage: 
 
-### Just run the test once and test it out for yourself:
+### Just run the test once and test it out for yourself*
 ```
 python stacked_lstm.py -d 
 ```
+* This generally consumes upwards 95% of my 1070 video cards ram, and about 4gb when running with the GPU
+
+#### IT REALLY SAVES ALOT OF TIME USING THE GPU
 
 ### Get an actual assessment running through the gauntlet of all model combinations
 ```
@@ -82,10 +85,11 @@ python stacked_lstm.py -d
 ./run_test_post_6pm.sh && ./process_output_log.sh output.log
 ```
 
-** if you want to try running in CPU only mode
+### If you want to try running in CPU only mode*
 ```
 CUDA_VISIBLE_DEVICES="" python stacked_lstm.py -d
 ```
+* this generally consumes upwards of 10G on my laptop in CPU mode, 
 
 ## Credits: 
 Alot of smart people at keras, google, pandas, Robinhood, Jamonek, and whoever would like to take credit for something they did in the past
