@@ -72,7 +72,7 @@ cd ../stock_picker
 ```
 python stacked_lstm.py -d 
 ```
-* This generally consumes upwards 95% of my 1070 video cards ram, and about 4gb when running with the GPU
+* This generally consumes upwards 95% of my 1070 video cards ram, and about 11.5gb when running with the GPU
 
 #### IT REALLY SAVES ALOT OF TIME USING THE GPU
 
