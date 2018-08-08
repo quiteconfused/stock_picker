@@ -40,29 +40,51 @@ And just to make sure everyone is aware. The author takes no responsibility for 
 
 ## Installation:
 
-install python2.7 (or 3.6) ... whatever I'm a readme, not your mother
+### Install python2.7 (or 3.6) ... whatever I'm a readme, not your mother
+```
+sudo apt-get install python
+```
+### Install the stock_picker
 ```
 git clone https://github.com/quiteconfused/stock_picker
+```
+### If you have a good video card (something that supports tensorflow)
+```
 pip install tensorflow-gpu keras pandas matplotlib sklearn numpy
+```
+### else
+```
+pip install tensorflow keras pandas matplotlib sklearn numpy
+```
+### Install other supporting libraries to download stock information
+```
 git clone https://github.com/Jamonek/Robinhood
 cd Robinhood
 pip install .
+```
+### Return to the stock_picker
+```
 cd ../stock_picker
 ```
 ## Usage: 
 
-Just run the test once and test it out for yourself:
+### Just run the test once and test it out for yourself:
 ```
 python stacked_lstm.py -d 
 ```
 
-Get an actual assessment running through the gauntlet of all model combinations
+### Get an actual assessment running through the gauntlet of all model combinations
 ```
 ./run_test.sh && ./process_output_log.sh output.log
 ```
-OR (when its past 6pm and the markets have closed ... projections are made to compensate for live values) 
+### OR (when its past 6pm and the markets have closed ... projections are made to compensate for live values) 
 ```
 ./run_test_post_6pm.sh && ./process_output_log.sh output.log
+```
+
+** if you want to try running in CPU only mode
+```
+CUDA_VISIBLE_DEVICES="" python stacked_lstm.py -d
 ```
 
 ## Credits: 
