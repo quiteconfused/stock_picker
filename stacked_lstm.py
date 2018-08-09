@@ -89,6 +89,7 @@ def main(argv):
                     elif(test==1):
                         batch_size=256
                     elif(test==2):
+                        epochs=50
                         batch_size=32
 
                 if(argument.startswith('-p=')):
@@ -223,9 +224,9 @@ def main(argv):
 
             if(test==0):
 
-                close_values=[MinMaxScaler().fit_transform([[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)]) for z in range(timesteps)]
+                close_values=[[[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)] for z in range(timesteps)]
 
-                close_test_values=[MinMaxScaler().fit_transform([[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)]) for z in range(timesteps,timesteps+1)]
+                close_test_values=[[[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)] for z in range(timesteps,timesteps+1)]
 
                 hidden=nb_classes
                 decoder.add(LSTM(hidden, return_sequences=True, input_shape=( nb_classes, data_dim)))
@@ -239,9 +240,9 @@ def main(argv):
 
             elif(test==1):
 
-                close_values=[MinMaxScaler().fit_transform([[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)]) for z in range(timesteps)]
+                close_values=[[[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)] for z in range(timesteps)]
 
-                close_test_values=[MinMaxScaler().fit_transform([[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)]) for z in range(timesteps,timesteps+1)]
+                close_test_values=[[[np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)] for z in range(timesteps,timesteps+1)]
 
                 hidden=24
                 decoder.add(LSTM(hidden, return_sequences=True, input_shape=( nb_classes, data_dim)))
@@ -257,9 +258,9 @@ def main(argv):
 
             elif(test==2):
 
-                close_values=[[MinMaxScaler().fit_transform([[ np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) if chan==0 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['high_price']) if chan==1 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['low_price']) if chan==2 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['open_price']) if chan==3 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['volume']) for chan in range(5)] for x in range(MAX_SIZE)]) for y in range(num_of_good_tickers)] for z in range(timesteps)]
+                close_values=[[[[ np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) if chan==0 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['high_price']) if chan==1 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['low_price']) if chan==2 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['open_price']) if chan==3 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['volume']) for chan in range(5)] for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)] for z in range(timesteps)]
 
-                close_test_values=[[MinMaxScaler().fit_transform([[ np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) if chan==0 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['high_price']) if chan==1 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['low_price']) if chan==2 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['open_price']) if chan==3 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['volume']) for chan in range(5)] for x in range(MAX_SIZE)]) for y in range(num_of_good_tickers)] for z in range(timesteps,timesteps+1)]        
+                close_test_values=[[[[ np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['close_price']) if chan==0 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['high_price']) if chan==1 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['low_price']) if chan==2 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['open_price']) if chan==3 else np.float32(spy[good_stock_ticker[y]]['results'][0]['historicals'][x+z]['volume']) for chan in range(5)] for x in range(MAX_SIZE)] for y in range(num_of_good_tickers)] for z in range(timesteps,timesteps+1)]        
 
                 hidden=20
                 decoder.add(Reshape((nb_classes, MAX_SIZE, 5, 1), input_shape=(nb_classes, MAX_SIZE, 5)))

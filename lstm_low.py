@@ -61,6 +61,7 @@ def do_main(argv):
         stock_dataset = pd.read_csv('./stocks/'+argv[1]+'_data.csv')
 
     dataset=stock_dataset['close']
+    dataset2=stock_dataset['low']
 
     #x_scaler = MinMaxScaler(feature_range=(0, 1))
     #y_scaler = MinMaxScaler(feature_range=(0, 1))
@@ -72,7 +73,9 @@ def do_main(argv):
 
     for i in range(window_size, len(dataset)):
         X.append(dataset[i - window_size:i])
-        y.append([dataset[i]])
+    
+    for i in range(window_size, len(dataset2)):
+        y.append([dataset2[i]])
 
 
     X.append(dataset[len(dataset)-window_size:])
@@ -82,9 +85,7 @@ def do_main(argv):
 
     #X=x_scaler.fit_transform(X)
     #y_train=y_scaler.fit_transform(y)
-
     y_train=y
-
 
 
     X_train=X[:-1,]
@@ -121,7 +122,7 @@ def do_main(argv):
     #prediction=y_scaler.inverse_transform(test_predict)[0][0]
     prediction=test_predict[0][0]
 
-    dataset=np.asarray(dataset)
+    dataset=np.asarray(dataset2)
 
     history=dataset[-1]
 

@@ -20,7 +20,7 @@ def download_stock(stock):
 
 	""" set the download window """
 	now_time = datetime.datetime.now()
-	past_five_pm=now_time.replace(hour=16, minute=0, second=0, microsecond=0)
+	past_five_pm=now_time.replace(hour=18, minute=0, second=0, microsecond=0)
 	start_time = datetime.datetime(now_time.year - 5, now_time.month , now_time.day)
 
 	weekno=datetime.datetime.today().weekday()
