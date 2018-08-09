@@ -86,7 +86,7 @@ def do_main(argv):
 
     #y_train=np.asarray(y)
     #y_train=y_scaler.fit_transform(y)
-    y_train = y
+    y_train = np.asarray(y)
     X=np.asarray(X)
 
     X_train=X[:-1,]
